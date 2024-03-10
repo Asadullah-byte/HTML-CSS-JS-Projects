@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&family=Mulish&family=Righteous&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  inline-size: 100vw;
+  block-size: 100vh;
+  background-color: rgb(220, 220, 220);
+}
+
+body {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Mulish";
+}
+
+.nav {
+  inline-size: 100%;
+  block-size: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: #090808;
+  color: #fff;
+}
+.navbar {
+  display: flex;
+}
+.logo {
+  display: flex;
+  inline-size: 3%;
+  font-family: "Righteous";
+  padding-inline-start: 90px;
+  padding-block-start: 0px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+img {
+  width: 60px;
+}
+
+ul {
+  inline-size: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  list-style-type: none;
+  padding-block: 1.5em;
+}
+ul li {
+  font-size: 16px;
+  font-weight: 300;
+  padding-inline: 1.5em;
+}
+
+#h1 {
+  font-family: "karla";
+  font-size: 150px;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#insert {
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0;
+  margin-top: -15%;
+}
+
+.wel-msg {
+  align-self: center;
+  justify-self: center;
+  transform: translate(20px, 170px);
+  position: absolute;
+  background-color: #090808;
+  padding-inline: 35px;
+  padding-block: 20px;
+  border-radius: 60px;
+  color: #fff;
+  text-decoration: underline solid rgb(248, 237, 123);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.key {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  border: 2px solid #999;
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: bold;
+  flex-direction: column;
+  padding: 15px;
+  margin: 10px;
+  min-inline-size: 150px;
+}
+.key small {
+  inline-size: 100%;
+  /* display: ; */
+  position: absolute;
+  top: -24px;
+  left: 0px;
+  text-align: center;
+  color: #555;
+}
+
+.key:hover {
+  transition: ease-out 0.5s;
+  color: #fff;
+  background-color: #090808;
+  border: none;
+}
+.notification {
+  display: none;
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.notification.show {
+  display: block;
+}
