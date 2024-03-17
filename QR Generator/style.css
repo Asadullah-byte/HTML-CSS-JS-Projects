@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Karla&family=Montserrat&family=Mulish&family=Noto+Serif+Display:wght@600&family=Poppins&family=Righteous&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins" ,sans-serif;
+}
+
+html, body{
+padding: 0 10px;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #a17965;
+color: #fff;
+}
+
+.wrapper{
+    height: 256px;
+    max-width: 410px;
+    background: #222;
+    border-radius: 7px;
+    padding: 20px 25px 0;
+    transition: height 0.6s ease;
+    box-shadow: 0 10px 30px rgba(206, 205, 205, 0.1);
+}
+.wrapper.active{
+    height: 530px;
+}
+header h1{
+    font-size: 21px;
+    font-weight: 600;
+    color: #fff;
+}
+header p {
+    font-size: 15px;
+    font-weight: 200;
+    color: #aaa;
+    margin-top: 5px;
+}
+.wrapper .form{
+    position: relative;
+    margin: 20px 0 25px;
+}
+.form span{
+
+    background: #333;
+    padding: 0px 5px 0px;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    transform: translate( 320px , -40px);
+}
+.form span:hover{
+    color: #aaa;
+}
+
+.form :where(input , button){
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.1s ease;
+}
+.form input{
+    background: #333;
+    color: #fff;
+    padding: 0 17px;
+    border: 1px solid #999;
+}
+.form input:focus{
+    box-shadow: 0 3px 6px rgba(214, 212, 212, 0.13);
+
+}
+
+.form input::placeholder{
+    color: #999;
+}
+.form button{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+
+}
+.form button:hover{
+    background: #333;
+}
+.form button:active{
+    transform: scale(0.95);
+}
+.QR-Code-form{
+    opacity: 0;
+    display: flex;
+    padding: 33px 0;
+    border-radius: 5px;
+    align-items: center;
+    pointer-events: none;
+    justify-content: center;
+    border: 1px solid #696969;
+}
+
+.QR-Code-form img{
+    width: 170px;
+  
+}
+.wrapper.active .QR-Code-form{
+    opacity: 1;
+    pointer-events: auto;
+    transition: 0.5s 0.05s ease;
+}
+@media  (max-width: 430px){
+    .wrapper{
+        height: 255px;
+        padding: 16px 20px;
+    }
+    .wrapper.active{
+        height: 510px;
+    }
+    header p {
+        color: #696969;
+    }
+    .form :where(input , button){
+        height: 52px;
+    }
+    .QR-Code-form img{
+        width: 160px;
+    }
+}
+    
+
