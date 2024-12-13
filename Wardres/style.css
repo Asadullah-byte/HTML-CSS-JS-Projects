@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* transition: 0.4s; */
+    font-family: "Poppins";
+    
+}
+html,body{
+    width: 100%;
+    height: 100%;
+   
+}
+
+
+.header {
+   
+    background-color: #2a9d90;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    
+}
+
+.search {
+    display: contents;
+    margin-left: 22rem;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 40px;
+
+    
+}
+
+.search .icon:hover {
+    box-shadow: 0px 0px 9px 5px #2875a9;
+}
+
+.search .icon {
+    position: absolute;
+    transform: translate(56rem);
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 40px;
+    z-index: 1000;
+    /* transition: 0.9s;  */
+}
+
+.search .icon::before {
+   content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 3px solid  #2875a9;
+    border-radius: 30px;
+    transform: translate(8px , 7px)
+}
+.search .icon::after{
+    content:'';
+    position: absolute;
+    width: 3px;
+    height: 10px;
+    background: #2875a9;
+    border-radius: 10%;
+    transform: translate(25px, 20px) rotate(318deg);
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-bar ul {
+    
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 35px;
+}
+
+.nav-bar ul li {
+    font-size: 1.18vw;
+    display: inline-block;
+    margin-right: 40px;
+    position: relative;
+}
+
+.nav-bar ul li::after {
+    content: "";
+    width: 0%;
+    height: 2.1px;
+    border-radius: 30px;
+    background: #ffffff;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+
+.nav-bar ul li:hover::after {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    background-color: rgb(8, 6, 31);
+    max-width: 1536px;
+    margin: auto;
+}
+
+.logo {
+    margin: 0;
+    font-size: 2.2vw;
+    padding: 0px 0px 0px 30px;
+    font-weight: 1000;
+}
+
+.row {
+    min-height: 43.7vw;
+    max-width: 117.79vw;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+        url("./Img/pic.jpg");
+    display: flex;
+    align-items: left;
+    flex-wrap: wrap;
+    padding-left: 3.6rem;
+}
+
+.col-2 {
+    font-family: "norwester";
+    margin-top: 4rem;
+    color: #ffffff;
+    width: 220px;
+    position: absolute;
+    top: 30%;
+    left: 42%;
+    transform: translate(-30px, -30px);
+}
+
+.col-2 h1 {
+    font-size: 4vw;
+}
+
+.tagline {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+}
+.categories{
+    height:100vh;
+    font-size: 3vh;
+    padding-top: 4%;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    
+}
+.categories h1{
+    font-size: 3vw;
+    font-weight: 700;
+   
+}
+.row-1{
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+.img-box{
+    width: 20.9318vw;
+    height: 26.041vw;
+   overflow-x: clip;
+   
+    
+}
+.img-box img{
+    border-radius: 5px;
+    border: 1px solid rgb(33, 33, 33);
+    width: 100%;
+    height: 100%;
+    background-image: cover;
+    background-position: center;
+    opacity: 0.7;
+   
+    transition: 0.9s ease;   
+
+}
+.img-box img:hover{
+    opacity: 1;
+    transform: scale(1.04);
+    
+    
+}
+.ctxt h3{
+    color: black;
+
+
+}
+#second{
+    width: 100%;
+    padding-top: 50px;
+    height: 100vh;
+    border-top: 1.58px solid rgb(140, 140, 137);
+    
+}
+.con-frag h1{
+    
+    text-align: center;
+    font-weight: 700;
+    font-size: 3vw;
+}
+.fragrance{
+   width: 100%;
+   text-align: center;
+   padding-top: 50px;
+   display: flex;
+   justify-items: center;
+   align-content: space-evenly;
+   align-items: center;
+   
+}
+.perfeum-img{
+    
+    width: 100%;
+    flex-wrap: wrap;
+    padding-top: 3%;
+}
+
+.perfeum-img img{
+    border: 1px solid rgb(33, 33, 33);
+    width:70%;
+    transition: 0.9s ease;
+    border-radius: 5px;
+    
+    
+}
+.fragrance:hover > .perfeum-img img:not(:hover){
+    opacity: 0.2;
+    transform: scale(0.9);
+}
+.perfeum-img h3{
+    font-size: 1.1vw;
+    padding-top:10px;
+    font-weight: 200;
+    
+}
+

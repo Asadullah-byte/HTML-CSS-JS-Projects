@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />  
+    <!-- <script src="app.js" type="module" defer></script> -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Register Here</h1>
+        </header>
+
+        <form  class="register-form">
+            <div class="name-fields">
+                <label class="title">Username</label>
+                <input type="text" name="" id="name-input" placeholder="John" class="fname" value="" >
+            </div>
+            <div class="email">
+                <label class="title">Email</label>
+                <input type="text" name="" id="email-input" placeholder="e.g. abc@example.com" class="email" >
+            </div>
+            <div class="main-password">
+                <label class="title">Password</label>
+                <input type="text" name="" id="pass-input" placeholder="must be 8-digit long" class="password"><span class="material-symbols-outlined" id="visibility">
+                    visibility
+                    </span>
+                <label class="title">Confirm Password</label>
+                <input type="text" name="" id="confirmpass" class="confirm-password" placeholder="must be 8-digit long"><span
+                id="visibility" class="material-symbols-outlined">
+                    visibility
+                    </span>
+            </div>
+            <div class="submitbody" >
+                <button type="button" id="submitbtn">Submit</button>
+            
+            </div>
+
+        </form>
+    </div>
+ <script type="module" >
+    
+  
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyBRlI0sIJA_6Q2CWfQh4P1V7rSxu3rBT8k",
+    authDomain: "signup-5a84a.firebaseapp.com",
+    databaseURL: "https://signup-5a84a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "signup-5a84a",
+    storageBucket: "signup-5a84a.appspot.com",
+    messagingSenderId: "1062770825281",
+    appId: "1:1062770825281:web:047efd191adb54e7298ec0",
+    measurementId: "G-QSTMQEQ0T2"
+  };
+
+
+  const app = initializeApp(firebaseConfig);
+ 
+  const emailVerification = (email) =>{
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailPattern.test(email);
+  }
+
+  // const validUsername = (username) => {
+  //   const usernamePattern = /^[a-zA-Z0-9._&+-]$/;
+  //   return usernamePattern.test(username);
+  // }
+
+
+const db = getDatabase(app);
+document.getElementById("submitbtn").addEventListener('click', (e) => {
+    e.preventDefault();
+    //forward Decelaration
+   const username = document.getElementById("name-input").value.trim();
+   const email = document.getElementById("email-input").value.trim();
+   const password = document.getElementById("pass-input").value.trim();
+   const confirmPass = document.getElementById("confirmpass").value.trim();
+
+   if(!username || !email || !password || !confirmPass){
+    alert("Name field Cannot be empty");
+    return;
+   }
+   if(!emailVerification(email)){
+    alert("Invalid email! Enter valid email pattern");
+    return;
+   }
+    
+  //  if(!validUsername(username)){
+  //   alert("Enter a Valid username!");
+  //  }
+   
+   if(password !== confirmPass ){
+    alert("Passwords do not match!");
+    return;
+   }
+
+   set(ref(db, 'user/' + username), {
+
+    username: username,
+    email: email,
+    password: password,
+  }).then(() => {
+    alert("Signup Succesful!");
+  }).catch((error) => {
+    alert("Error: " + error.message);
+  });
+
+});
+
+ 
+ </script>
+</body>
+</html>

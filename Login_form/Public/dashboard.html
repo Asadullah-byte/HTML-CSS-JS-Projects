@@ -1,0 +1,268 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="body.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src="dashboard.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <nav id="sidebar close" class="side-bar">
+            <header>
+                <div class="user-info">
+                    <span class="image">
+                        <img src="../img/blank-avatar.jpg" alt="">
+                        </img>
+                    </span>
+                        <div class="text">
+                            <span class="greeting">Hi,</span>
+                            <span class="user-name">Asad</span>
+                        </div>
+                </div>
+                    <i class='bx bxs-chevron-right toogle' ></i>
+            </header>
+            <div class="menu-bar">
+                <div class="menu">
+                    <li class="search-box">
+                        
+                            <i class='bx bx-search icon' ></i>
+                            <input type="text" placeholder="Search">
+                        
+                </li> 
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                                <a href="#" data-target="dashboard">
+                                    <i class='bx bxs-dashboard icon'></i>
+                                    <span class="text nav-text">Dashboard</span>
+                                </a>
+                        </li>
+                        <li class="nav-link">
+                                <a href="#" data-target="calendar">
+                                    <i class='bx bxs-calendar icon' ></i>
+                                    <span class="text nav-text">Calendar</span>
+                                </a>
+                        </li>
+                        <li class="nav-link">
+                                <a href="#" data-target="activites">
+                                    <i class='bx bx-task icon'></i>
+                                    <span class="text nav-text">Activites</span>
+                                </a>
+                        </li>
+                        <li class="nav-link">
+                                <a href="#" data-target="group">
+                                    <i class='bx bxs-group icon ' ></i>
+                                    <span class="text nav-text">Group</span>
+                                </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="#">
+                            <i class='bx bx-log-out icon ' ></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                </li>
+                <li class="mode">
+                <div class="moon-sun">
+                    <i class="bx bx-moon icon moon"></i>
+                    <i class="bx bx-sun icon sun"></i>
+                </div>
+                <span class="mode-text text">Dark Mode</span>
+
+                <div class="toogle-switch">
+                    <span class="switch"></span>
+                </div>
+            </li>
+                </div>
+            </div>
+        </nav>
+        <main class="container">
+            <div class="hero-container">
+                <div class="text">
+                    Dashboard
+                </div>
+                <div class="update-icon">
+                    <li class="">
+                        <a href="#">
+                            <i class='bx bx-bell' ></i>
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <i class='bx bx-envelope'></i>
+                            
+                        </a>
+                     </li>
+                </div>
+            </div>
+            <main class="main-container">
+                <div class="sec-1">
+                    <section class="overview">
+                        <div class="title">
+                            Overview
+                        </div>
+                        <div class="values">
+                            <p class="total-spend" id="total-spend">RS. 0 </p>
+                            <p class="you-owe" id="you-owe">RS. 0</p>
+                            <p class="you-get-back" id="you-get-back">RS. 0</p>
+                            <p class="settled-up" id="settled-up">RS. 0</p>
+                        </div>
+                        <div class="headings">
+                            <p class="total-spend">Total Spend</p>
+                            <p class="you-owe">You Owe</p>
+                            <p class="you-get-back">Owe You</p>
+                            <p class="settled-up">Settled up</p>
+                        </div>
+                    </section>
+                    <section class="activites">activites</section>
+                    <section class="expense-stats">
+                        <div class="header">
+                            <span class="title">Expense Statistics</span>
+                            <select id="time-range">
+                                <option value="7days">Last 7 days</option>
+                                <option value="month">Last month</option>
+                                <option value="tomorrow">Tomorrow</option>
+                            </select>
+                        </div>
+                        <div class="chart">
+                            <canvas id="expenseChart"></canvas>
+                        </div>
+                    </section>
+                </div>
+                <div class="sec-2">
+                    <section class="add-expense">
+                        <div class="group-image">
+                            <img src="../img/blank-avatar.jpg" alt="" >
+                        </div>
+                            <form class="expense-form" action="" method="post">
+                                <div class="input-group">
+                                    <label for="group-name">Group name</label>
+                                    <select id="group-name">
+                                        <option value="group1">Group 1</option>
+                                        <option value="group2">Group 2</option>
+                                        <option value="group3">Group 3</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" id="title" placeholder="Title">
+                                </div>
+                                <div class="input-group">
+                                    <label for="description">Description</label>
+                                    <input type="text" id="description" placeholder="Description">
+                                </div>
+                                <div class="input-group">
+                                    <label for="paid-by">Paid by</label>
+                                    <select id="paid-by">
+                                        <option value="you">You</option>
+                                        <option value="friend1">Friend 1</option>
+                                        <option value="friend2">Friend 2</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label for="split-equally">Split equally</label>
+                                    <select id="split-equally">
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                                <button type="submit">Save</button>
+                            </form>
+                    </section>
+                    <section class="friends">friends</section>
+                </div>
+            </main>
+               
+        </main>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const ctx = document.getElementById('expenseChart').getContext('2d');
+                
+                // Create gradient
+                const gradient = ctx.createLinearGradient(33, 67, 0, 400);
+                gradient.addColorStop(0, 'rgba(75, 192, 192, 0.2)');
+                gradient.addColorStop(1, 'rgba(75, 192, 192, 0)');
+        
+                const expenseChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['June 17', 'June 18', 'June 19', 'June 20', 'June 21', 'June 22', 'June 23'],
+                        datasets: [{
+                            label: 'Expenses',
+                            data: [300, 400, 350, 500, 450, 700, 600],
+                            backgroundColor: gradient,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 2,
+                            pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgba(75, 192, 192, 1)',
+                            tension: 0.4 // Adds curved lines
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.1)' // Grid line color
+                                },
+                                ticks: {
+                                    color: '#fff' // Y-axis label color
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.1)' // Grid line color
+                                },
+                                ticks: {
+                                    color: '#fff' // X-axis label color
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false // Hide the legend
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                                titleColor: '#fff',
+                                bodyColor: '#fff',
+                                cornerRadius: 5
+                            }
+                        }
+                    }
+                });
+        
+                document.getElementById('time-range').addEventListener('change', function() {
+                    const selectedRange = this.value;
+                    let newData;
+                    let newLabels;
+        
+                    if (selectedRange === '7days') {
+                        newLabels = ['June 17', 'June 18', 'June 19', 'June 20', 'June 21', 'June 22', 'June 23'];
+                        newData = [300, 400, 350, 500, 450, 700, 600];
+                    } else if (selectedRange === 'month') {
+                        newLabels = ['June 1', 'June 8', 'June 15', 'June 22', 'June 29'];
+                        newData = [2000, 1800, 2200, 2100, 2500];
+                    } else if (selectedRange === 'tomorrow') {
+                        newLabels = ['June 24'];
+                        newData = [500];
+                    }
+        
+                    expenseChart.data.labels = newLabels;
+                    expenseChart.data.datasets[0].data = newData;
+                    expenseChart.update();
+                });
+            });
+        </script>
+        
+    </body>
+    </html>
